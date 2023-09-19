@@ -1,6 +1,7 @@
 const getData = async () => {
   const response = await fetch("http://localhost:3000/getData");
-  fetch("http://localhost:3000/getData")
+//   fetch("http://localhost:3000/getData")
+  console.log(await response.json());
   return await response.json();
 };
 
@@ -73,8 +74,9 @@ async function main() {
     console.log("hello");
   try {
     const {data} = await getData();
+    console.log(data);
     const tbody = document.getElementById("tbody");
-    createBigDisplay(data[0]);
+    // createBigDisplay(data[0]);
     data.forEach((item,index) => {
       tbody.appendChild(createRow(item,index));
     });
