@@ -73,6 +73,7 @@ async function main() {
   try {
     const {data} = await getData();
     const tbody = document.getElementById("tbody");
+    tbody.innerHTML = "";
     createBigDisplay(data[0]);
     data.forEach((item,index) => {
       tbody.appendChild(createRow(item,index));
